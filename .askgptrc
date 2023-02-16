@@ -1,0 +1,15 @@
+#!bin/bash
+# add this to your ~/.bashrc
+# source <path-to-this-directory>/.askgptrc
+
+export OPENAI_API_KEY="YOUR-API-KEY"
+
+write() {
+    carlenv
+    echo "correct and improve this text, make it more clear: "$1 | python /home/cjckris/Documents/repos/ask_chatgpt/main.py | tee -a ~/Documents/carl-schibsted/personal/book/output.txt 
+}
+
+ask(){
+    carlenv
+    python /home/cjckris/Documents/repos/ask_chatgpt/main.py "$@"
+}
