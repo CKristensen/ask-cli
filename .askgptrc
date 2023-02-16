@@ -6,7 +6,7 @@
 
 write() {
     gptenv789
-    echo "correct and improve this text, make it more clear: "$1 | python /home/cjckris/Documents/repos/ask_chatgpt/main.py | tee -a ~/Documents/gpt-schibsted/personal/book/output.txt 
+    echo "correct and improve this text, make it more clear: "$1 | python /home/cjckris/Documents/repos/ask_chatgpt/main.py
     deactivate
 }
 
