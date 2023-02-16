@@ -11,7 +11,8 @@ To do so, you will need to create an account on the OpenAI platform and then gen
 Once you have your API key, you can add it to the GPT-CLI configuration file (.askgtprc).  
 !!!MAKE SURE TO KEEP IT PRIVATE!!!
 ## Installation
-your can run install.sh or installzsh.sh to install it.
+your can run `zsh installzsh.sh` to install it.
+you need zsh. To run on other systems .... ask chat gpt.  
 to uninstall simply remove the lines added in .basrc/.zshrc.  
 
 ## Usage
