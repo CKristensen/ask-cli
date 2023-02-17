@@ -27,9 +27,11 @@ if grep -Fxq "source $(pwd)/.askgptrc" ~/.zshrc
 then
     echo ".askgptrc has already been appended to ~/.zshrc"
 else
-    echo "source $(pwd)/.askgptrc" >> ~/.zshrc
+    cp ./askgpt.py ~/.askgpt.py
     echo 'alias gptenv789=''"source '"$(pwd)"'/gptenv/bin/activate"' >> ~/.zshrc
+    echo "source $(pwd)/.askgptrc &&" >> ~/.zshrc
     echo ".askgptrc appended to ~/.zshrc"
+    echo "added .askgpt.py to ~"
 fi
 deactivate
 source ~/.zshrc

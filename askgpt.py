@@ -47,5 +47,10 @@ def ask_chatgpt(prompt):
 if args.verbose:
     print(f"asking {model}")
     print(f"asking {args.default}")
-response = ask_chatgpt(args.default)
+try:
+    response = ask_chatgpt(args.default)
+except openai.error.APIError as e:
+    response = str(e)
+except openai.error.RateLimitError as e:
+    response = str(e)
 print(response)

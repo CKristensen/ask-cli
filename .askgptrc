@@ -4,14 +4,8 @@
 
 # export OPENAI_API_KEY="YOUR-API-KEY"
 
-write() {
-    gptenv789
-    echo "correct and improve this text, make it more clear: "$1 | python /home/cjckris/Documents/repos/ask_chatgpt/main.py
-    deactivate
-}
-
 ask(){
     gptenv789
-    python /home/cjckris/Documents/repos/ask_chatgpt/main.py "$@"
+    python ~/.askgpt.py "$@"
     deactivate
 }
