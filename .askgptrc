@@ -3,6 +3,7 @@
 # source <path-to-this-directory>/.askgptrc
 
 # export OPENAI_API_KEY="YOUR-API-KEY"
+# export WOLFRAM_APP_ID="YOUR-APP-ID-KEY"
 
 ask(){
     gptenv789
