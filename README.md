@@ -13,7 +13,10 @@ Once you have your API key, you can add it to the GPT-CLI configuration file (.a
 ## Installation
 your can run `zsh installzsh.sh` to install it.
 you need zsh. To run on other systems .... ask chat gpt.  
-to uninstall simply remove the lines added in .basrc/.zshrc.  
+to uninstall simply remove the lines added in .zshrc.  
+The installaton will add some line to your .zshrc,   
+create a python venv with openai installed on it  
+and add a python script to your ~ folder.
 
 ## Usage
 
