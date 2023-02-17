@@ -22,9 +22,11 @@ and add a python script to your ~ folder.
 
 Once you have your API key, you can use GPT-CLI to ask GPT questions.
 To do so, use the 'ask' command followed by the -m option to select your model. For example:
+```
+ask -m tc "What is the meaning of life?"
 
-`ask -m td "What is the meaning of life?"`
-
+The meaning of life is what each person makes of it.
+```
 This will query the GPT-CLI API with your question and return the answer.
 
 ## Conclusion
