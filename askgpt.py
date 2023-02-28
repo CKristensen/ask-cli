@@ -20,6 +20,7 @@ parser.add_argument("-m,", "--model", help="""available models:
                     w: wolfram-alpha-simple ||""")
 parser.add_argument("-t", "--temperature", help="""What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.""")
 parser.add_argument("-v", "--verbose", action='store_true')
+parser.add_argument("-p", "--prompt", help="g: give git commands, w: improve writing, k: kubectl commands")
 
 model_dict = {
     "td": "text-davinci-003",
@@ -71,6 +72,14 @@ def ask_wolfram(question):
         # Return an error message
         return f'I could not get answer from Wolfram Alpha. {r.status_code}'
 
+prompts = {
+            "g": "give only git commands for the following:",
+            "k": "give only kubectl commands for the following:",
+            "w": "please correct and make this message more readable:"
+           }
+
+if args.prompt:
+    args.default = (prompts.get(args.prompt) or "") + args.default
 if args.verbose:
     print(f"asking {model}")
     print(f"asking {args.default}")
@@ -78,5 +87,4 @@ if model != "wolfram-alpha":
     response = ask_chatgpt(args.default)
 else:
     response = ask_wolfram(args.default)    
-
 print(response)                             
