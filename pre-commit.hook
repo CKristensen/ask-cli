@@ -1,0 +1,23 @@
+#!/bin/bash
+# pre-commit hook to be used with black
+
+echo Running Black...
+
+# finds all Python files to check
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$')
+
+if [[ -z "$FILES" ]]
+then
+    exit 0
+fi
+
+output=$(black --check $FILES)
+if [[ -z "$output" ]]
+then
+    echo "Black check passed!"
+    exit 0
+else
+    echo "Black check failed:"
+    echo $output
+    exit 1
+fi
