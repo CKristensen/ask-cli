@@ -51,6 +51,27 @@ ask -m cd "make a python script that print hello world!"
 
 ```
 
+
+You can use the askc command and the assistant will remember your conversation like chat gpt.
+example, in this case do not use the -m option.
+```
+askc "Who is the pope?"
+
+The pope is the head of the Catholic Church.
+
+askc "How old is he?"
+
+He is 84 years old.
+
+# Reset conversation
+
+askc -c "What is the meaning of life?"
+
+...
+
+```
+
+
 ## Conclusion
 
 GPT-CLI is a great tool for quickly asking GPT questions from your API. 
