@@ -10,3 +10,8 @@ ask(){
     python ~/.askgpt.py "$@"
     deactivate
 }
+askc(){
+    gptenv789
+    python ~/.askgpt.py -m tt "$@"
+    deactivate
+}
