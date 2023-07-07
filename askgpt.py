@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(prog='Ask AI from CLI. Ask GPT from the comfort
                                  epilog='ask -m cd "make a python script that print hello world!"')
 parser.add_argument('default')
 parser.add_argument("-m,", "--model", help="""available models:
-                    tt: gpt-3.5-turbo(CHAT GPT) ||
+                    tt: gpt-4(CHAT GPT) ||
                     td: text-davinci-003        ||
                     tc: text-curie-001          ||
                     tb: text-babbage-001        ||
@@ -28,7 +28,7 @@ parser.add_argument("-p", "--prompt", help="g: give git commands, w: improve wri
 parser.add_argument("-c", "--clear", help="clears the chat history", action='store_true')
 
 model_dict = {
-    "tt": "gpt-3.5-turbo",
+    "tt": "gpt-4",
     "td": "text-davinci-003",
     "tc": "text-curie-001",
     "tb": "text-babbage-001",
@@ -94,7 +94,7 @@ class dbHandler:
 
 def ask_gpt(prompt):
     try:
-        max_tokens = 4000 if "davinci" in model else 2048
+        max_tokens = 8000 if "4" in model else 2048
         requested_tokens = max_tokens - int(len(prompt) / 2)
         completions = openai.Completion.create(
             engine=model,
@@ -125,7 +125,7 @@ def ask_chatgpt(prompt):
     request = [{k: v for k, v in d.items() if k != 'id'} for d in messages]
 
     completions = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=request
     )
     response_content = completions.choices[0]["message"]["content"]
